@@ -61,6 +61,7 @@ namespace Anagram.Tests
             CollectionAssert.AreEqual(returnedComparedWords, comparedWords);
         }
 
+        [TestMethod]
         public void SortString_WillSortStringsAToZ_String()
         {
             string userInput = "noon";
@@ -68,6 +69,23 @@ namespace Anagram.Tests
             AnagramFinder newAnagram = new AnagramFinder(userInput);
 
             Assert.AreEqual(newAnagram.SortedMainWord, sortedSample);
+        }
+
+        [TestMethod]
+        public void SortWordList_SortWordsAlphabetically_String()
+        {
+            string userInput = "noon";
+            AnagramFinder newAnagram = new AnagramFinder(userInput);
+
+            string compareWord1 = "nono";
+            string compareWord2 = "ooon";
+            string sortedCompareWord1 = "nnoo";
+            string sortedComparedWord2 = "nooo";
+            newAnagram.CompareMaker(compareWord1);
+            newAnagram.CompareMaker(compareWord2);
+            List<string> sortedCompareWordsTest = new List<string> { sortedCompareWord1, sortedComparedWord2 };
+            newAnagram.SortWordList();
+            CollectionAssert.AreEqual(newAnagram.sortedCompareWords, sortedCompareWordsTest);
         }
     }
 }

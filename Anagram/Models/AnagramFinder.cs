@@ -11,6 +11,7 @@ public class AnagramFinder
     public string SortedMainWord { get; set; }
 
     private List<string> compareWords = new List<string> { };
+    public List<string> sortedCompareWords = new List<string> { };
     public AnagramFinder(string userInput)
     {
         MainWord = userInput;
@@ -33,6 +34,15 @@ public class AnagramFinder
     public string SortString(string someString)
     {
         return String.Concat(someString.OrderBy(c => c));
+    }
+
+    public void SortWordList()
+    {
+        foreach (string userWord in compareWords)
+        {
+            string temporaryString = SortString(userWord);
+            sortedCompareWords.Add(temporaryString);
+        }
     }
 
     // add business logic to compare MainWord to compareWords
