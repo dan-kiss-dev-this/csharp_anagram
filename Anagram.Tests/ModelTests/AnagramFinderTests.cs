@@ -72,23 +72,6 @@ namespace Anagram.Tests
         }
 
         [TestMethod]
-        public void SortWordList_SortWordsAlphabetically_String()
-        {
-            string userInput = "noon";
-            AnagramFinder newAnagram = new AnagramFinder(userInput);
-
-            string compareWord1 = "nono";
-            string compareWord2 = "ooon";
-            string sortedCompareWord1 = "nnoo";
-            string sortedComparedWord2 = "nooo";
-            newAnagram.CompareMaker(compareWord1);
-            newAnagram.CompareMaker(compareWord2);
-            List<string> sortedCompareWordsTest = new List<string> { sortedCompareWord1, sortedComparedWord2 };
-            newAnagram.SortWordList();
-            CollectionAssert.AreEqual(newAnagram.sortedCompareWords, sortedCompareWordsTest);
-        }
-
-        [TestMethod]
         public void SortWordList_SortWordsAlphabeticallyAndStoresMatches_Void()
         {
             string userInput = "noon";

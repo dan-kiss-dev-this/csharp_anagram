@@ -11,7 +11,6 @@ public class AnagramFinder
     public string SortedMainWord { get; set; }
 
     private List<string> compareWords = new List<string> { };
-    public List<string> sortedCompareWords = new List<string> { };
 
     public List<string> finalAnagram = new List<string> { };
 
@@ -44,7 +43,6 @@ public class AnagramFinder
         foreach (string userWord in compareWords)
         {
             string temporaryString = SortString(userWord);
-            sortedCompareWords.Add(temporaryString);
 
             if (temporaryString == SortedMainWord)
             {
