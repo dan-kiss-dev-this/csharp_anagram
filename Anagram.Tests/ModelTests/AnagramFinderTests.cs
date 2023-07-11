@@ -13,7 +13,8 @@ namespace Anagram.Tests
         [TestMethod]
         public void AnagramConstructor_CreatesAnagramObject_AnagramFinder()
         {
-            AnagramFinder newAnagram = new AnagramFinder();
+            string userInput = "computer";
+            AnagramFinder newAnagram = new AnagramFinder(userInput);
             Assert.AreEqual(typeof(AnagramFinder), newAnagram.GetType());
         }
 
@@ -22,7 +23,7 @@ namespace Anagram.Tests
         {
             string userInput = "computer";
             AnagramFinder newAnagram = new AnagramFinder(userInput);
-            string originalWord = newAnagram.userInput;
+            string originalWord = newAnagram.MainWord;
             Assert.AreEqual(userInput, originalWord);
         }
     }

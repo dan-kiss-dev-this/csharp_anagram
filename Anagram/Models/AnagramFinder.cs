@@ -4,5 +4,9 @@ namespace Anagram.Models;
 
 public class AnagramFinder
 {
-    //business logic here
+    public string MainWord { get; }
+    public AnagramFinder(string userInput)
+    {
+        MainWord = userInput;
+    }
 }
