@@ -33,7 +33,7 @@ public class AnagramFinder
         return compareWords;
     }
 
-    public string SortString(string someString)
+    private string SortString(string someString)
     {
         return String.Concat(someString.OrderBy(c => c));
     }
