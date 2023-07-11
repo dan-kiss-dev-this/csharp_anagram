@@ -60,6 +60,15 @@ namespace Anagram.Tests
             List<string> returnedComparedWords = newAnagram.GetCompareWords();
             CollectionAssert.AreEqual(returnedComparedWords, comparedWords);
         }
+
+        public void SortString_WillSortStringsAToZ_String()
+        {
+            string userInput = "noon";
+            string sortedSample = "nnoo";
+            AnagramFinder newAnagram = new AnagramFinder(userInput);
+
+            Assert.AreEqual(newAnagram.SortedMainWord, sortedSample);
+        }
     }
 }
 
