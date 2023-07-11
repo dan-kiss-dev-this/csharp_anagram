@@ -87,6 +87,20 @@ namespace Anagram.Tests
             newAnagram.SortWordList();
             CollectionAssert.AreEqual(newAnagram.sortedCompareWords, sortedCompareWordsTest);
         }
+
+        [TestMethod]
+        public void SortWordList_SortWordsAlphabeticallyAndStoresMatches_Void()
+        {
+            string userInput = "noon";
+            AnagramFinder newAnagram = new AnagramFinder(userInput);
+            string compareWord1 = "nono";
+            string compareWord2 = "ooon";
+            newAnagram.CompareMaker(compareWord1);
+            newAnagram.CompareMaker(compareWord2);
+            newAnagram.SortWordList();
+            List<string> expectedAnswer = new List<string> { compareWord1 };
+            CollectionAssert.AreEqual(newAnagram.finalAnagram, expectedAnswer);
+        }
     }
 }
 
