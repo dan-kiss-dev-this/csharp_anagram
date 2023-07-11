@@ -13,11 +13,16 @@ public class AnagramFinder
 
     public void CompareMaker(string newWord)
     {
-        compareWords.Add(newWord);
+        if (MainWord.Length == newWord.Length)
+        {
+            compareWords.Add(newWord);
+        }
+
     }
 
     public List<string> GetCompareWords()
     {
         return compareWords;
     }
+
 }

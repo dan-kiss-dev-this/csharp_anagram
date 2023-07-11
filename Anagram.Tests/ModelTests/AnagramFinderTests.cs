@@ -32,8 +32,6 @@ namespace Anagram.Tests
         {
             string userInput = "noon";
             AnagramFinder newAnagram = new AnagramFinder(userInput);
-
-            List<string> sampleComparedWords = new List<string> { "nono", "ooon" };
             string compareWord1 = "nono";
             string compareWord2 = "ooon";
             // we want to add compare words   
@@ -42,6 +40,25 @@ namespace Anagram.Tests
             List<string> comparedWords = new List<string> { compareWord1, compareWord2 };
             List<string> returnedCompareWords = newAnagram.GetCompareWords();
             CollectionAssert.AreEqual(returnedCompareWords, comparedWords);
+        }
+
+        [TestMethod]
+
+        public void CompareMaker_CheckLenghtOfWords_ListOfStrings()
+        {
+            string userInput = "noon";
+            AnagramFinder newAnagram = new AnagramFinder(userInput);
+            string compareWord1 = "nono";
+            string compareWord2 = "ooon";
+            string compareWord3 = "computer";
+            string compareWord4 = "onon";
+            newAnagram.CompareMaker(compareWord1);
+            newAnagram.CompareMaker(compareWord2);
+            newAnagram.CompareMaker(compareWord3);
+            newAnagram.CompareMaker(compareWord4);
+            List<string> comparedWords = new List<string> { compareWord1, compareWord2, compareWord4 };
+            List<string> returnedComparedWords = newAnagram.GetCompareWords();
+            CollectionAssert.AreEqual(returnedComparedWords, comparedWords);
         }
     }
 }
